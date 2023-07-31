@@ -6,10 +6,22 @@
       <span><%= humanized_money_with_symbol product.price %></span>
     </h1>
   <% end%>
+
   <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-    method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %> 
+
+  <%# COMMENT: When a product has 0 quantity, display a sold out badge on the product list page %>
+
+    <% if product.quantity <= 0 %>
+      <button class="soldout">Sold out </button>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn disabled' ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <% end %>
+    <% else %>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <% end %>
     <% end %>
   </div>
 </article>
