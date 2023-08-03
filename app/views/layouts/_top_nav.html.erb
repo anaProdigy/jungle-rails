@@ -43,6 +43,35 @@
           <%# </ul>
         </li> %>
       </ul>
+
+        <!-- User Authentication Links -->
+      <ul class="navbar-nav">
+        <% if current_user %>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-danger"
+              href="#"
+              id="navbarDropdownUser"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Signed in as <%= current_user.first_name %>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownUser">
+              <li><%= link_to "Logout", '/logout', class: "nav-link" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Login', '/login', class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Signup', '/signup', class: "nav-link" %>
+          </li>
+        <% end %>
+
+         <!-- Admin Dropdown Menu -->
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a

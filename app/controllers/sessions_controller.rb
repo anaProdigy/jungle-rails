@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
-end
+
 
 end

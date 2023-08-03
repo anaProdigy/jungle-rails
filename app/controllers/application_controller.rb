@@ -33,6 +33,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+  #The helper_method line below current_user allows us to use @current_user in our view files.
   helper_method :current_user
 
   def authorize
