@@ -1,6 +1,13 @@
-# Jungle
+# Jungle E-commerce Application
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Jungle is a captivating e-commerce application built with Rails 6.1, tailored for plant enthusiasts and gardeners. While the foundation is based on a [template](https://github.com/lighthouse-labs/jungle-rails), I've taken the initiative to enhance it with a plethora of features, culminating in a seamless and delightful online shopping experience. Jungle emerges as the definitive platform for all aspects related to plants and gardening.
+
+## Features
+
+- Engaging and convenient online shopping experience.
+- Wide variety of plants available for purchase.
+- Thoughtfully designed interface for both seasoned gardeners and beginners.
+- Implementation of additional features beyond the template to enrich user experience.
 
 ## Final Product
 ![website demonstration](jungle.gif)
