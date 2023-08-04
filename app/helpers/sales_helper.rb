@@ -1,7 +1,7 @@
 module SalesHelper
   #self.active is in Sale model, AR
   def active_sale
-    Sale.active
+    Sale.active.first
   end
 
   def active_sale?

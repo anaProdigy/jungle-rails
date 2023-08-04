@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2023_08_04_013428) do
   end
 
   add_foreign_key "line_items", "orders"
-  add_foreign_key "line_items", "products"
+  add_foreign_key "line_items", "products", on_delete: :cascade
   add_foreign_key "products", "categories"
 end
