@@ -8,6 +8,20 @@ class User < ApplicationRecord
   # prevent from regestering same email but using Capital letters
   before_validation :downcase_email
 
+  #Define a new class method to authenticate USER
+  def self.authenticate_with_credentials (email, password)
+    
+    user = User.find_by_email(email)
+ # If the user exists AND the password entered is correct.
+    if user && user.authenticate(password)
+      return user
+    end  
+
+    return nil
+  end
+
+
+
   private
 
   def downcase_email
