@@ -78,5 +78,15 @@ RSpec.describe User, type: :model do
     expect(authenticated_user).to eq(@user)
    end
 
+   it "returns nil when email is not found" do
+    authenticated_user = User.authenticate_with_credentials("", "password")
+    expect(authenticated_user).to be_nil
+   end
+
+   it "returns nil when password is incorrect" do
+    authenticated_user = User.authenticate_with_credentials("test@example.com", "notvalidpassword")
+    expect(authenticated_user).to be_nil
+   end
+
   end
 end
