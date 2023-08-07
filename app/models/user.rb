@@ -3,14 +3,15 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, uniqueness: { case_sensitive: false, message: "This email already registered, please enter another one" }
 
-  before_validation: :downcase_email
+  validates :password_confirmation, presence: true
+  validates :password, length: { minimum: 5, message: "must be minimum 5 charachters"}
+  # prevent from regestering same email but using Capital letters
+  before_validation :downcase_email
 
   private
 
-  def downcase_email 
+  def downcase_email
     self.email = email.downcase if email.present?
   end
-
-
 
 end
