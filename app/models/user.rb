@@ -10,12 +10,12 @@ class User < ApplicationRecord
 
   #Define a new class method to authenticate USER
   def self.authenticate_with_credentials (email, password)
-    
-    user = User.find_by_email(email)
+    normalized_email = email.downcase.strip
+    user = User.find_by_email(normalized_email)
  # If the user exists AND the password entered is correct.
-    if user && user.authenticate(password)
-      return user
-    end  
+      if user && user.authenticate(password)
+        return user
+      end  
 
     return nil
   end

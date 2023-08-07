@@ -65,33 +65,38 @@ RSpec.describe User, type: :model do
   end
 
   describe ".authenticate with credentials" do
-   before do
-    @user = User.create(
-      email:"test@example.com",
-      password: "password",
-      password_confirmation: "password"
-    )
-   end
+    before do
+      @user = User.create(
+        email:"test@example.com",
+        password: "password",
+        password_confirmation: "password"
+      )
+    end
 
-   it "returns a user when credentials are valid" do
-    authenticated_user = User.authenticate_with_credentials("test@example.com", "password")
-    expect(authenticated_user).to eq(@user)
-   end
+    it "returns a user when credentials are valid" do
+      authenticated_user = User.authenticate_with_credentials("test@example.com", "password")
+      expect(authenticated_user).to eq(@user)
+    end
 
-   it "returns nil when email is not found" do
-    authenticated_user = User.authenticate_with_credentials("", "password")
-    expect(authenticated_user).to be_nil
-   end
+    it "returns nil when email is not found" do
+      authenticated_user = User.authenticate_with_credentials("", "password")
+      expect(authenticated_user).to be_nil
+    end
 
-   it "returns nil when password is incorrect" do
-    authenticated_user = User.authenticate_with_credentials("test@example.com", "notvalidpassword")
-    expect(authenticated_user).to be_nil
-   end
+    it "returns nil when password is incorrect" do
+      authenticated_user = User.authenticate_with_credentials("test@example.com", "notvalidpassword")
+      expect(authenticated_user).to be_nil
+    end
 
-   it "returns user when email has different letter cases" do
-    authenticated_user = User.authenticate_with_credentials("test@eZample.Com", "password")
-    expect(authenticated_user).to be_nil
-   end
+    it "returns user when email has different letter cases" do
+      authenticated_user = User.authenticate_with_credentials("test@eXample.Com", "password")
+      expect(authenticated_user).to eq(@user)
+    end
+
+    it "returns the user when email has leading/trailing spaces" do
+        authenticated_user = User.authenticate_with_credentials("  test@example.com  ", "password")
+        expect(authenticated_user).to eq(@user)
+      end
 
   end
 end
