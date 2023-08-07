@@ -88,5 +88,10 @@ RSpec.describe User, type: :model do
     expect(authenticated_user).to be_nil
    end
 
+   it "returns user when email has different letter cases" do
+    authenticated_user = User.authenticate_with_credentials("test@eZample.Com", "password")
+    expect(authenticated_user).to be_nil
+   end
+
   end
 end
