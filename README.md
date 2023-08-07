@@ -12,7 +12,7 @@ Jungle is a captivating e-commerce application built with Rails 6.1, tailored fo
 ## Final Product
 ![website demonstration](jungle.gif)
 
-## Features inplemented by me:
+### Features inplemented by me:
 - Create empty cart UI
 - Display a sold out badge on the product list page, when a product has 0 quantity
 - Add more info to the order dtails page
@@ -20,11 +20,17 @@ Jungle is a captivating e-commerce application built with Rails 6.1, tailored fo
 - Add About Page
 - Implement the index (list), new, create and destroy actions for Admin => Categories page
 - User authentication
+- Add tests for Product model
 
 
-## Bugs fixed:
+### Bugs fixed:
 - Fix money formatting on the cart and admin pages
 - Implement HTTP basic auth as a way of securing the admin/products resource The Basic Auth credentials: username: "Jungle", password: "book"
+
+### Rspec tests
+- Tests to validate creating a Product
+- Tests to validate creating a User
+
 
 
 ## Setup
