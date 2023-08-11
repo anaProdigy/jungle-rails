@@ -27,9 +27,32 @@ Jungle is a captivating e-commerce application built with Rails 6.1, tailored fo
 - Fix money formatting on the cart and admin pages
 - Implement HTTP basic auth as a way of securing the admin/products resource The Basic Auth credentials: username: "Jungle", password: "book"
 
-### Rspec tests
+### Rspec tests:
 - Tests to validate creating a Product
 - Tests to validate creating a User
+
+Run RSpec Tests:
+1. Execute RSpec tests using the bundle exec rspec command followed by the path to the directory or specific spec file you want to test. For example, to run all spec files in the spec directory: 
+```bash
+bundle exec rspec spec
+```
+
+### Cypress tests:
+- Tests to validate login and signup
+
+Run Cypress Tests:
+1. Start Test Server:
+First, start the test server in test environment using the following command:
+```bash
+RAILS_ENV=test rails s
+```
+2. Open Cypress Test Runner:
+```bash
+bin/rails cypress:open 
+```
+
+
+
 
 
 

@@ -63,7 +63,11 @@ beforeEach(() => {
 // });
 
 describe(" Signup Test Cases", () => {
-
+  beforeEach(() => {
+    
+    cy.visit("/");
+    cy.get(".nav-link").contains("Signup").click();
+  });
   // Clean up the test user
   //this is coming from suppor/commands.js custom command
   afterEach(() => {
@@ -93,5 +97,7 @@ describe(" Signup Test Cases", () => {
 
 
   });
+
+  
 
 });
