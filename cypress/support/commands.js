@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('cleanupTestUser', () => {
+  cy.request({
+    method: 'DELETE', // Change the method based on your server implementation
+    url: '/users/delete_user',
+    body: {
+      email: 'ana@smith2020.com'
+    },
+    failOnStatusCode: false
+  });
+});

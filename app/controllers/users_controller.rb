@@ -15,6 +15,19 @@ class UsersController < ApplicationController
     end
   end  
 
+
+  #define the delete_user action to handle the user deletion
+  #added this to cleanup db pass sign up test
+  def delete_user
+    user = User.find_by_email(params[:email])
+    if user
+      user.destroy
+      head :no_content
+    else
+      head :not_found
+    end
+  end
+
   private
 
   def user_params

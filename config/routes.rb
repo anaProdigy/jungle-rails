@@ -12,6 +12,12 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
+  #a custom route to handle user deletion
+  #added this to cleanup db pass sign up test
+  resources :users do
+  delete :delete_user, on: :collection
+  end
+
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

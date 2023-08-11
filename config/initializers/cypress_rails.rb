@@ -4,11 +4,12 @@ DatabaseCleaner.strategy = :truncation
 return unless Rails.env.test?
 
 CypressRails.hooks.before_server_start do
+
   # Create a test user
   User.create!(
     first_name: "Bob",
     last_name: "Great",
-    email: "test@example.com",
+    email: "bob@bob.com",
     password: "password",
     password_confirmation: "password"
   )
@@ -46,6 +47,9 @@ CypressRails.hooks.before_server_stop do
   # Called once, at_exit
   DatabaseCleaner.clean
 end
+
+
+
 
 private
 
