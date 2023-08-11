@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      # Send email receipt
+      send_order_receipt_email(current_user, order) 
+
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
