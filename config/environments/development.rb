@@ -74,6 +74,10 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.action_mailer.show_previews = true
+
+  #  to prevew the email sent after successful payment for the order
+  # go to http://localhost:3000/rails/mailers/
+  # OR http://localhost:3000/rails/mailers/order_mailer/order_receipt
+config.action_mailer.show_previews = true
 config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
 end

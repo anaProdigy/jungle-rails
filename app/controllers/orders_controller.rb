@@ -12,7 +12,9 @@ class OrdersController < ApplicationController
 
     if order.valid?
       # Send email receipt
-      send_order_receipt_email(current_user, order) 
+      # Send email receipt
+    
+    OrderMailer.order_receipt(current_user, order).deliver_now
 
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'

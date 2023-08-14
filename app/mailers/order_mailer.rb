@@ -1,3 +1,4 @@
+# send emails related to orders 
 class OrderMailer < ApplicationMailer
   default from: 'no-reply@jungle.com'
 
