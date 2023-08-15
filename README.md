@@ -23,6 +23,7 @@ Jungle is a captivating e-commerce application built with Rails 6.1, tailored fo
 - Add tests for Product model
 - Product Ratings
 - E-mail Receipt
+- Product quantity adjustment
 
 
 ### Bugs fixed:
