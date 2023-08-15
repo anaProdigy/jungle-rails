@@ -239,6 +239,18 @@ reviews_data = [
     description: 'Great value for money.',
     rating: 4
   },
+  {
+    product_id: 3,
+    user_id: 1,
+    description: 'Highly recommended!',
+    rating: 5
+  },
+   {
+    product_id: 5,
+    user_id: 1,
+    description: 'Not bad, but could be better.',
+    rating: 3
+  },
   # Add more review data as needed
 ]
 
