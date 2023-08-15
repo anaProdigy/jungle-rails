@@ -26,7 +26,12 @@
 <div class="product-reviews">
   <h3 class="section-title">Product Reviews</h3>
 
+<!-- a new review form  -->
+ 
   <div class="new-review-form">
+<!-- conditionally render review form depending on if user is authenticated review form  -->
+  <% if current_user %>
+
     <h3>Add a Review</h3>
     <%= form_for [@product, Review.new], url: product_reviews_path(@product), local: true do |form| %>
       <div class="form-group">
@@ -41,8 +46,17 @@
         <%= form.submit "Submit Review", class: 'btn btn-primary' %>
       </div>
     <% end %>
+<!-- if not authenticated -->
+    <% else %>
+    <div class="alert alert-info">
+      Please log in to add a review.
+    </div>
+  <% end %>
+
   </div>
 
+
+<!-- render all reviews   -->
   <div class="reviews-list">
     <% @reviews.each do |review| %>
       <div class="review">

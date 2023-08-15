@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  #o ensure that only logged-in users can create reviews and to protect the reviews_controller actions from unauthorized access
+  before_action :authenticate_user!, only: [:create]
+  
   def create
     # Find the parent model (product)
     @product = Product.find(params[:product_id])
