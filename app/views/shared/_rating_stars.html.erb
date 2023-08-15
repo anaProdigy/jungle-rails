@@ -1,7 +1,5 @@
+
+
 <% (1..5).each do |i| %>
-  <% if rating >= i %>
-    <%= fa_icon 'star', class: 'star-filled' %>
-  <% else %>
-    <%= fa_icon 'star', class: 'star-empty' %>
-  <% end %>
+ <span class="star" style="color: <%= i <= rating ? 'gold' : 'gray' %>;">&#9733;</span>
 <% end %>
