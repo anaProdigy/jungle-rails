@@ -217,6 +217,40 @@ cat3.products.create!({
   price: 79.99
 })
 
+User.create!({
+  first_name: "Ana",
+  last_name: "Great",
+  email: "z.anastasia@gmail.com",
+  password:"hello",
+  password_confirmation: "hello"
+})
+
+# Define review data for each product
+reviews_data = [
+  {
+    product_id: 1,
+    user_id: 1,
+    description: 'Awesome product!',
+    rating: 5
+  },
+  {
+    product_id: 2,
+    user_id: 1,
+    description: 'Great value for money.',
+    rating: 4
+  },
+  # Add more review data as needed
+]
+
+# Create reviews using the defined data
+reviews_data.each do |review_data|
+  Review.create!(
+    product_id: review_data[:product_id],
+    user_id: review_data[:user_id],
+    description: review_data[:description],
+    rating: review_data[:rating]
+  )
+end
 
 puts "DONE!"
 
