@@ -67,6 +67,11 @@
           <%# render partial rating stars %>
             <%= render partial: 'shared/rating_stars', locals: { rating: review.rating } %>
           </div>
+
+          <% if current_user  && review.user == current_user %>
+            <%= link_to 'Delete', product_review_path(@product, review), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+
         </div>
         <p class="review-description"><%= review.description %></p>
       </div>

@@ -36,6 +36,15 @@ class ApplicationController < ActionController::Base
   #The helper_method line below current_user allows us to use @current_user in our view files.
   helper_method :current_user
 
+
+  #define a method that checks if the user is authenticated (logged in):
+  def authenticate_user!
+    if current_user.nil?
+      flash[:error] = 'You must be logged in to perform this action.'
+      redirect_to login_path # Replace with the appropriate login path
+    end
+  end
+
   def authorize
     redirect_to '/login' unless current_user
   end

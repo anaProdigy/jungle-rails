@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
-  #o ensure that only logged-in users can create reviews and to protect the reviews_controller actions from unauthorized access
-  before_action :authenticate_user!, only: [:create]
-  
+  #to ensure that only logged-in users can create reviews and to protect the reviews_controller actions from unauthorized access
+  #authenticate_user! is located in application_controller
+  before_action :authenticate_user!, except: [:index, :show]
+
+
   def create
     # Find the parent model (product)
     @product = Product.find(params[:product_id])
@@ -20,6 +22,15 @@ class ReviewsController < ApplicationController
       # If not successful: render the page where the form resides
       render "products/show"
     end
+  end
+
+# delete review
+  def destroy
+ 
+    @review = Review.find(params[:id])
+    @product = @review.product
+    @review.destroy
+    redirect_to product_path(@product), notice: "Review was successfully deleted."
   end
 
   private

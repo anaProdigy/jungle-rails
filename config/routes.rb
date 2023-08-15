@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show] do
     # /products/:product_id/reviews
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:create, :destroy]
   end
 
   resources :categories, only: [:show]
