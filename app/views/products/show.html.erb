@@ -44,7 +44,7 @@
   </div>
 
   <div class="reviews-list">
-    <% @product.reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <div class="review">
         <div class="review-header">
           <h4 class="review-author"><%= review.user.first_name %> <%= review.user.last_name %></h4>
