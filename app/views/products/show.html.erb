@@ -3,6 +3,7 @@
     <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
   </header>
 
+  <!-- Product details column -->
   <article class="product-detail">
     <%= image_tag @product.image.url, class: 'main-img' %>
     <div>
@@ -19,5 +20,18 @@
       </div>
     </div>
   </article>
+
+  <!-- Reviews details column -->
+
+  <div class="product-reviews">
+    <h3>Product Reviews</h3>
+    <% @product.reviews.each do |review| %>
+      <div class="review">
+        <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
+        <p><%= review.description %></p>
+        <p>Rating: <%= review.rating %>/5</p>
+      </div>
+    <% end %>
+  </div>
 
 </section>
