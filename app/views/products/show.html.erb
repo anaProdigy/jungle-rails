@@ -23,15 +23,21 @@
 
   <!-- Reviews details column -->
 
-  <div class="product-reviews">
-    <h3>Product Reviews</h3>
-    <% @product.reviews.each do |review| %>
-      <div class="review">
-        <h4><%= review.user.first_name %> <%= review.user.last_name %></h4>
-        <p><%= review.description %></p>
-        <p>Rating: <%= review.rating %>/5</p>
-      </div>
-    <% end %>
+<div class="product-reviews">
+    <h3 class="section-title">Product Reviews</h3>
+    <div class="reviews-list">
+      <% @product.reviews.each do |review| %>
+        <div class="review">
+          <div class="review-header">
+            <h4 class="review-author"><%= review.user.first_name %> <%= review.user.last_name %></h4>
+            <div class="rating-stars">
+              <%= render 'shared/rating_stars', rating: review.rating %>
+            </div>
+          </div>
+          <p class="review-description"><%= review.description %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 </section>

@@ -1,0 +1,35 @@
+.section-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reviews-list {
+  margin-top: 20px;
+}
+
+.review {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 30rem;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.review-author {
+  font-weight: bold;
+}
+
+.rating-stars {
+  color: #f0a800;
+}
+
+.star-filled,
+.star-empty {
+  font-size: 16px;
+}

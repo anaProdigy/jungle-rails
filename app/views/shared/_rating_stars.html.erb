@@ -1,0 +1,7 @@
+<% (1..5).each do |i| %>
+  <% if rating >= i %>
+    <%= fa_icon 'star', class: 'star-filled' %>
+  <% else %>
+    <%= fa_icon 'star', class: 'star-empty' %>
+  <% end %>
+<% end %>
