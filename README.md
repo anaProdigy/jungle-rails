@@ -76,7 +76,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Use Credit Card # 4111 1111 1111 1111, any valid expiry date(06/33), any VCC code(123) for testing success scenarios. 
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
