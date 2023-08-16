@@ -21,7 +21,7 @@ Jungle is a captivating e-commerce application built with Rails 6.1, tailored fo
 - Implement the index (list), new, create and destroy actions for Admin => Categories page
 - User authentication
 - Add tests for Product model
-- Product Ratings
+- Product Ratings/Reviewies
 - E-mail Receipt
 - Product quantity adjustment
 
