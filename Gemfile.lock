@@ -296,7 +296,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   cypress-rails
-  database_cleaner-active_record (~> 2.1.0)
+  database_cleaner-active_record
   dotenv-rails
   faker
   font-awesome-rails
