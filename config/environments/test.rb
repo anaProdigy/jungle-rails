@@ -6,6 +6,27 @@ require "active_support/core_ext/integer/time"
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+
+  config.before(:suite) do
+  DatabaseCleaner.clean_with(:truncation)
+end
+
+config.before(:each) do
+  DatabaseCleaner.strategy = :transaction
+end
+
+config.before(:each, js: true) do
+  DatabaseCleaner.strategy = :truncation
+end
+
+config.before(:each) do
+  DatabaseCleaner.start
+end
+
+config.after(:each) do
+  DatabaseCleaner.clean
+end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.cache_classes = false
