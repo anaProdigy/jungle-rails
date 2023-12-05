@@ -44,6 +44,10 @@ gem 'rmagick'
 gem 'faker'
 gem 'carrierwave'
 
+#to solve action mailer
+gem 'net-smtp' # to send email
+gem 'net-imap' # for rspec
+gem 'net-pop'  # for rspec
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
