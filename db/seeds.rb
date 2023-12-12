@@ -217,13 +217,13 @@ cat3.products.create!({
   price: 79.99
 })
 
-# User.create!({
-#   first_name: "Ana",
-#   last_name: "Great",
-#   email: "z.anastasia@gmail.com",
-#   password:"hello",
-#   password_confirmation: "hello"
-# })
+User.create!({
+  first_name: "Ana",
+  last_name: "Great",
+  email: "z.anastasia11@gmail.com",
+  password:"hello",
+  password_confirmation: "hello"
+})
 
 # Define review data for each product
 reviews_data = [
